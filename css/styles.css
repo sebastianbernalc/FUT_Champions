@@ -18,12 +18,32 @@ header {
     font-weight: bold;
     grid-column: 1;
     grid-row: 1;
+    border-radius: 10px; 
+   
+    
+}
+.header-content {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido en el centro */
+    justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+@font-face {
+    font-family: Facon;
+    src: url(fuentes/Facon.ttf);
+}
+
+h1{
+    margin-right: 20px; 
+    color: #ffffff;
+    font-family: "Facon";
+    
 }
 
 
 
 article {
-
+    border-radius: 10px; 
     text-align: center;
     background: radial-gradient(circle, rgb(0, 0, 0), rgba(26, 131, 218, 0.5));
     font-size: 25px;
@@ -38,6 +58,44 @@ article {
     background-color: rgba(251, 80, 80, 0.17);
     flex-wrap: wrap;
 }
+
+.flex-item {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+
+.flex-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.flex-item .descripcion {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: "Facon";
+}
+
+.flex-item:hover img {
+    filter: brightness(70%);
+}
+
+.flex-item:hover .overlay {
+    opacity: 1;
+}
+
+
 
 .flex-item {
 
@@ -60,12 +118,14 @@ article {
     /* Ancho máximo del 100% para que todas las imágenes sean del mismo tamaño */
     max-height: 100%;
     /* Altura máxima del 100% para mantener la proporción */
+    transition: filter 0.3s ease;
 }
 
 
 
 
 footer {
+    border-radius: 10px; 
     position: sticky;
     background: #111;
     font-family: "Open Sans";
